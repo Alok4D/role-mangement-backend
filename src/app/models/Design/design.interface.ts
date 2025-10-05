@@ -13,7 +13,7 @@ export enum DesignStatus {
 export interface IDesign {
   _id?: string;
   title: string;
-  category: string; 
+  category: string;
   description: string;
   previewImage: string;
   designerName: string;

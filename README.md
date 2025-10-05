@@ -31,37 +31,6 @@ It provides **CRUD operations** for each module. You can test all endpoints dire
 
 ---
 
-## ⚙️ Installation & Setup
-
-1. Clone the repository:
-
-```bash
-git clone <your-repo-url>
-cd project
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Create a `.env` file:
-
-```env
-MONGO_URI=mongodb://localhost:27017/mydb
-PORT=4000
-```
-
-4. Run the server:
-
-```bash
-npm run dev
-```
-
-Server will start at `http://localhost:4000`.
-
----
 
 ## 🌐 API Endpoints (Postman-ready)
 
@@ -77,6 +46,19 @@ Server will start at `http://localhost:4000`.
 | PUT    | `/:id`   | Update user by ID | `http://localhost:4000/api/users/123` |
 | DELETE | `/:id`   | Delete user by ID | `http://localhost:4000/api/users/123` |
 
+**Sample JSON for POST / PUT:**
+
+```json
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "role": "customer",
+  "status": "active"
+}
+```
+
+
 ### Designs
 
 **Base URL:** `http://localhost:4000/api/design`
@@ -88,6 +70,27 @@ Server will start at `http://localhost:4000`.
 | POST   | `/`      | Create a new design | `http://localhost:4000/api/design`     |
 | PUT    | `/:id`   | Update design by ID | `http://localhost:4000/api/design/123` |
 | DELETE | `/:id`   | Delete design by ID | `http://localhost:4000/api/design/123` |
+
+**Sample JSON for POST / PUT:**
+
+```json
+{
+  "title": "Modern Website UI",
+  "category": "Graphics Design",
+  "description": "A modern and responsive UI design for e-commerce websites.",
+  "previewImage": "https://example.com/images/modern-ui.png",
+  "designerName": "Jane Doe",
+  "usedTools": ["Figma", "Adobe Photoshop", "Illustrator"],
+  "effectsUsed": ["Shadow", "Gradient", "Blur"],
+  "price": 49.99,
+  "process": "Initial wireframe -> Prototype -> Final design",
+  "complexityLevel": "Intermediate",
+  "tags": ["UI", "Web", "Responsive", "E-commerce"],
+  "status": "Active",
+  "likesCount": 15,
+  "downloadsCount": 5
+}
+```
 
 ### Categories
 
@@ -101,6 +104,16 @@ Server will start at `http://localhost:4000`.
 | PUT    | `/:id`   | Update category by ID | `http://localhost:4000/api/categories/123` |
 | DELETE | `/:id`   | Delete category by ID | `http://localhost:4000/api/categories/123` |
 
+**Sample JSON for POST / PUT:**
+
+```json
+{
+  "name": "Web Design",
+  "description": "All types of graphic design resources including logos, banners, and illustrations.",
+  "image": "https://example.com/images/graphic-design.png"
+}
+```
+
 ### Pricing Plans
 
 **Base URL:** `http://localhost:4000/api/pricing`
@@ -112,6 +125,22 @@ Server will start at `http://localhost:4000`.
 | POST   | `/`      | Create a new pricing plan | `http://localhost:4000/api/pricing`     |
 | PUT    | `/:id`   | Update pricing plan by ID | `http://localhost:4000/api/pricing/123` |
 | DELETE | `/:id`   | Delete pricing plan by ID | `http://localhost:4000/api/pricing/123` |
+
+**Sample JSON for POST / PUT:**
+
+```json
+{
+  "name": "Premium Plan",
+  "price": 49.99,
+  "features": [
+    "Unlimited designs",
+    "High-resolution downloads",
+    "Priority support",
+    "Access to premium templates"
+  ],
+  "duration": "1 month"
+}
+```
 
 ### Purchases
 
@@ -125,6 +154,18 @@ Server will start at `http://localhost:4000`.
 | PUT    | `/:id`   | Update purchase by ID | `http://localhost:4000/api/purchases/123` |
 | DELETE | `/:id`   | Delete purchase by ID | `http://localhost:4000/api/purchases/123` |
 
+**Sample JSON for POST / PUT:**
+
+```json
+{
+  "customer": "650b1f3e4f1c2a00123abcd2",
+  "design": "650b1f3e4f1c2a00123abcd2",
+  "selectedPricingPlan": "650b1f3e4f1c2a00123abcd3",
+  "paymentStatus": "Pending",
+  "purchaseDate": "2025-10-05T14:30:00.000Z"
+}
+```
+
 ### Reviews
 
 **Base URL:** `http://localhost:4000/api/reviews`
@@ -137,6 +178,17 @@ Server will start at `http://localhost:4000`.
 | PUT    | `/:id`   | Update review by ID | `http://localhost:4000/api/reviews/123` |
 | DELETE | `/:id`   | Delete review by ID | `http://localhost:4000/api/reviews/123` |
 
+**Sample JSON for POST / PUT:**
+
+```json
+{
+  "reviewer": "650a12345abcde1234567880",
+  "design": "650b23456bcdef2345678901",
+  "rating": 5,
+  "comment": "Amazing design! Very professional and clean."
+}
+```
+
 ---
 
 ## 📬 Postman Collection
@@ -147,12 +199,3 @@ Server will start at `http://localhost:4000`.
 4. Make sure to use `raw` → `JSON` for POST & PUT requests.
 
 ---
-
-## 🔒 Security (Optional)
-
-* Password hashing using bcrypt before saving user.
-* Roles can be used for access control (`admin` vs `customer`).
-* Authentication can be added for other modules as needed.
-
----
-
