@@ -69,73 +69,73 @@ Server will start at `http://localhost:4000`.
 
 **Base URL:** `http://localhost:4000/api/users`
 
-| Method | Endpoint | Description       |
-| ------ | -------- | ----------------- |
-| GET    | `/`      | Get all users     |
-| GET    | `/:id`   | Get user by ID    |
-| POST   | `/`      | Create a new user |
-| PUT    | `/:id`   | Update user by ID |
-| DELETE | `/:id`   | Delete user by ID |
+| Method | Endpoint | Description       | Postman Example URL                   |
+| ------ | -------- | ----------------- | ------------------------------------- |
+| GET    | `/`      | Get all users     | `http://localhost:4000/api/users`     |
+| GET    | `/:id`   | Get user by ID    | `http://localhost:4000/api/users/123` |
+| POST   | `/`      | Create a new user | `http://localhost:4000/api/users`     |
+| PUT    | `/:id`   | Update user by ID | `http://localhost:4000/api/users/123` |
+| DELETE | `/:id`   | Delete user by ID | `http://localhost:4000/api/users/123` |
 
 ### Designs
 
 **Base URL:** `http://localhost:4000/api/design`
 
-| Method | Endpoint | Description         |
-| ------ | -------- | ------------------- |
-| GET    | `/`      | Get all designs     |
-| GET    | `/:id`   | Get design by ID    |
-| POST   | `/`      | Create a new design |
-| PUT    | `/:id`   | Update design by ID |
-| DELETE | `/:id`   | Delete design by ID |
+| Method | Endpoint | Description         | Postman Example URL                    |
+| ------ | -------- | ------------------- | -------------------------------------- |
+| GET    | `/`      | Get all designs     | `http://localhost:4000/api/design`     |
+| GET    | `/:id`   | Get design by ID    | `http://localhost:4000/api/design/123` |
+| POST   | `/`      | Create a new design | `http://localhost:4000/api/design`     |
+| PUT    | `/:id`   | Update design by ID | `http://localhost:4000/api/design/123` |
+| DELETE | `/:id`   | Delete design by ID | `http://localhost:4000/api/design/123` |
 
 ### Categories
 
 **Base URL:** `http://localhost:4000/api/categories`
 
-| Method | Endpoint | Description           |
-| ------ | -------- | --------------------- |
-| GET    | `/`      | Get all categories    |
-| GET    | `/:id`   | Get category by ID    |
-| POST   | `/`      | Create a new category |
-| PUT    | `/:id`   | Update category by ID |
-| DELETE | `/:id`   | Delete category by ID |
+| Method | Endpoint | Description           | Postman Example URL                        |
+| ------ | -------- | --------------------- | ------------------------------------------ |
+| GET    | `/`      | Get all categories    | `http://localhost:4000/api/categories`     |
+| GET    | `/:id`   | Get category by ID    | `http://localhost:4000/api/categories/123` |
+| POST   | `/`      | Create a new category | `http://localhost:4000/api/categories`     |
+| PUT    | `/:id`   | Update category by ID | `http://localhost:4000/api/categories/123` |
+| DELETE | `/:id`   | Delete category by ID | `http://localhost:4000/api/categories/123` |
 
 ### Pricing Plans
 
 **Base URL:** `http://localhost:4000/api/pricing`
 
-| Method | Endpoint | Description               |
-| ------ | -------- | ------------------------- |
-| GET    | `/`      | Get all pricing plans     |
-| GET    | `/:id`   | Get pricing plan by ID    |
-| POST   | `/`      | Create a new pricing plan |
-| PUT    | `/:id`   | Update pricing plan by ID |
-| DELETE | `/:id`   | Delete pricing plan by ID |
+| Method | Endpoint | Description               | Postman Example URL                     |
+| ------ | -------- | ------------------------- | --------------------------------------- |
+| GET    | `/`      | Get all pricing plans     | `http://localhost:4000/api/pricing`     |
+| GET    | `/:id`   | Get pricing plan by ID    | `http://localhost:4000/api/pricing/123` |
+| POST   | `/`      | Create a new pricing plan | `http://localhost:4000/api/pricing`     |
+| PUT    | `/:id`   | Update pricing plan by ID | `http://localhost:4000/api/pricing/123` |
+| DELETE | `/:id`   | Delete pricing plan by ID | `http://localhost:4000/api/pricing/123` |
 
 ### Purchases
 
 **Base URL:** `http://localhost:4000/api/purchases`
 
-| Method | Endpoint | Description           |
-| ------ | -------- | --------------------- |
-| GET    | `/`      | Get all purchases     |
-| GET    | `/:id`   | Get purchase by ID    |
-| POST   | `/`      | Create a new purchase |
-| PUT    | `/:id`   | Update purchase by ID |
-| DELETE | `/:id`   | Delete purchase by ID |
+| Method | Endpoint | Description           | Postman Example URL                       |
+| ------ | -------- | --------------------- | ----------------------------------------- |
+| GET    | `/`      | Get all purchases     | `http://localhost:4000/api/purchases`     |
+| GET    | `/:id`   | Get purchase by ID    | `http://localhost:4000/api/purchases/123` |
+| POST   | `/`      | Create a new purchase | `http://localhost:4000/api/purchases`     |
+| PUT    | `/:id`   | Update purchase by ID | `http://localhost:4000/api/purchases/123` |
+| DELETE | `/:id`   | Delete purchase by ID | `http://localhost:4000/api/purchases/123` |
 
 ### Reviews
 
 **Base URL:** `http://localhost:4000/api/reviews`
 
-| Method | Endpoint | Description         |
-| ------ | -------- | ------------------- |
-| GET    | `/`      | Get all reviews     |
-| GET    | `/:id`   | Get review by ID    |
-| POST   | `/`      | Create a new review |
-| PUT    | `/:id`   | Update review by ID |
-| DELETE | `/:id`   | Delete review by ID |
+| Method | Endpoint | Description         | Postman Example URL                     |
+| ------ | -------- | ------------------- | --------------------------------------- |
+| GET    | `/`      | Get all reviews     | `http://localhost:4000/api/reviews`     |
+| GET    | `/:id`   | Get review by ID    | `http://localhost:4000/api/reviews/123` |
+| POST   | `/`      | Create a new review | `http://localhost:4000/api/reviews`     |
+| PUT    | `/:id`   | Update review by ID | `http://localhost:4000/api/reviews/123` |
+| DELETE | `/:id`   | Delete review by ID | `http://localhost:4000/api/reviews/123` |
 
 ---
 
@@ -154,4 +154,5 @@ Server will start at `http://localhost:4000`.
 * Roles can be used for access control (`admin` vs `customer`).
 * Authentication can be added for other modules as needed.
 
+---
 
