@@ -7,6 +7,7 @@ import { categoryRoutes } from "./app/models/category/category.routes";
 import { pricingPlanRoutes } from "./app/models/PricingPlan/pricingPlan.routes";
 import { reviewRoutes } from "./app/models/Review/review.routes";
 import { purchaseRoutes } from "./app/models/Purchase/purchase.routes";
+import { userRoutes } from "./app/models/Users/users.routes";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
+app.use("/api/users", userRoutes);
 app.use("/api/design", designRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/pricing", pricingPlanRoutes);

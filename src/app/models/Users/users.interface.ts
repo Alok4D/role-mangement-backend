@@ -11,8 +11,8 @@ export enum UserStatus {
 export interface IUser {
   _id?: string;                
   name: string;               
-  email: string;               // Must be unique and valid email
-  password: string;            // Hashed password
-  role: UserRole;              // Role-based access control
+  email: string;               
+  password: string;           
+  role: UserRole;             
   status?: UserStatus;
 }
