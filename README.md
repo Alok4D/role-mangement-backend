@@ -1,16 +1,20 @@
-# User Management API
+# API Documentation
 
 ## 📄 Project Description
 
-This is a **User Management API** built with **Node.js**, **Express**, **MongoDB**, and **TypeScript**.
-It provides **CRUD operations** for users with role and status management.
-You can test all endpoints directly in **Postman** using your local server.
+This project includes APIs for **Users**, **Designs**, **Categories**, **Pricing Plans**, **Purchases**, and **Reviews**, built with **Node.js**, **Express**, **MongoDB**, and **TypeScript**.
+It provides **CRUD operations** for each module. You can test all endpoints directly in **Postman** using your local server.
 
 ---
 
 ## ⚡ Features
 
 * Create, Read, Update, Delete Users
+* Create, Read, Update, Delete Designs
+* Create, Read, Update, Delete Categories
+* Create, Read, Update, Delete Pricing Plans
+* Create, Read, Update, Delete Purchases
+* Create, Read, Update, Delete Reviews
 * User Roles: `admin`, `customer`
 * User Status: `active`, `blocked`, `suspended`
 * Fully TypeScript typed
@@ -24,26 +28,6 @@ You can test all endpoints directly in **Postman** using your local server.
 * MongoDB & Mongoose
 * TypeScript
 * Postman (for API testing)
-
----
-
-## 📂 Project Structure
-
-```
-project/
-├── src/
-│   ├── modules/
-│   │   └── user/
-│   │       ├── user.model.ts
-│   │       ├── user.controller.ts
-│   │       ├── user.routes.ts
-│   │       └── user.services.ts
-│   └── app.ts
-├── package.json
-├── tsconfig.json
-├── .env
-└── README.md
-```
 
 ---
 
@@ -65,7 +49,7 @@ npm install
 3. Create a `.env` file:
 
 ```env
-MONGO_URI=mongodb://localhost:27017/userdb
+MONGO_URI=mongodb://localhost:27017/mydb
 PORT=4000
 ```
 
@@ -81,109 +65,83 @@ Server will start at `http://localhost:4000`.
 
 ## 🌐 API Endpoints (Postman-ready)
 
+### Users
+
 **Base URL:** `http://localhost:4000/api/users`
 
-| Method | Endpoint | Description       | Controller Function     |
-| ------ | -------- | ----------------- | ----------------------- |
-| GET    | `/`      | Get all users     | `getAllUsersController` |
-| GET    | `/:id`   | Get user by ID    | `getUserByIdController` |
-| POST   | `/`      | Create a new user | `createUserController`  |
-| PUT    | `/:id`   | Update user by ID | `updateUserController`  |
-| DELETE | `/:id`   | Delete user by ID | `deleteUserController`  |
+| Method | Endpoint | Description       |
+| ------ | -------- | ----------------- |
+| GET    | `/`      | Get all users     |
+| GET    | `/:id`   | Get user by ID    |
+| POST   | `/`      | Create a new user |
+| PUT    | `/:id`   | Update user by ID |
+| DELETE | `/:id`   | Delete user by ID |
 
-> 💡 Tip: All controller function names exactly match your router setup.
+### Designs
 
----
+**Base URL:** `http://localhost:4000/api/design`
 
-## 📝 Request Body Examples
+| Method | Endpoint | Description         |
+| ------ | -------- | ------------------- |
+| GET    | `/`      | Get all designs     |
+| GET    | `/:id`   | Get design by ID    |
+| POST   | `/`      | Create a new design |
+| PUT    | `/:id`   | Update design by ID |
+| DELETE | `/:id`   | Delete design by ID |
 
-**POST `/api/users`**
+### Categories
 
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "role": "customer",
-  "status": "active"
-}
-```
+**Base URL:** `http://localhost:4000/api/categories`
 
-**PUT `/api/users/:id`**
+| Method | Endpoint | Description           |
+| ------ | -------- | --------------------- |
+| GET    | `/`      | Get all categories    |
+| GET    | `/:id`   | Get category by ID    |
+| POST   | `/`      | Create a new category |
+| PUT    | `/:id`   | Update category by ID |
+| DELETE | `/:id`   | Delete category by ID |
 
-```json
-{
-  "name": "John Smith",
-  "status": "blocked"
-}
-```
+### Pricing Plans
 
-> 💡 Tip: In Postman, use `raw` → `JSON` in the request body for POST & PUT.
+**Base URL:** `http://localhost:4000/api/pricing`
 
----
+| Method | Endpoint | Description               |
+| ------ | -------- | ------------------------- |
+| GET    | `/`      | Get all pricing plans     |
+| GET    | `/:id`   | Get pricing plan by ID    |
+| POST   | `/`      | Create a new pricing plan |
+| PUT    | `/:id`   | Update pricing plan by ID |
+| DELETE | `/:id`   | Delete pricing plan by ID |
 
-## 💾 Response Example
+### Purchases
 
-**GET `/api/users`**
+**Base URL:** `http://localhost:4000/api/purchases`
 
-```json
-{
-  "success": true,
-  "data": [
-    {
-      "_id": "650a12345abcde1234567890",
-      "name": "John Doe",
-      "email": "john@example.com",
-      "role": "customer",
-      "status": "active",
-      "createdAt": "2025-10-05T12:34:56.789Z",
-      "updatedAt": "2025-10-05T12:34:56.789Z"
-    }
-  ]
-}
-```
+| Method | Endpoint | Description           |
+| ------ | -------- | --------------------- |
+| GET    | `/`      | Get all purchases     |
+| GET    | `/:id`   | Get purchase by ID    |
+| POST   | `/`      | Create a new purchase |
+| PUT    | `/:id`   | Update purchase by ID |
+| DELETE | `/:id`   | Delete purchase by ID |
 
----
+### Reviews
 
-## 📦 Database Schema
+**Base URL:** `http://localhost:4000/api/reviews`
 
-**Users Collection**
-
-| Field     | Type     | Description                      |
-| --------- | -------- | -------------------------------- |
-| _id       | ObjectId | Auto-generated ID                |
-| name      | String   | User's full name                 |
-| email     | String   | Unique email address             |
-| password  | String   | Hashed password                  |
-| role      | String   | `admin` or `customer`            |
-| status    | String   | `active`, `blocked`, `suspended` |
-| createdAt | Date     | Auto-generated timestamp         |
-| updatedAt | Date     | Auto-generated timestamp         |
-
-**Diagram Example:**
-
-```
-┌─────────┐
-│  Users  │
-├─────────┤
-│ _id     │
-│ name    │
-│ email   │
-│ password│
-│ role    │
-│ status  │
-│ createdAt │
-│ updatedAt │
-└─────────┘
-```
-
-*(Optional: Use dbdiagram.io or draw.io to make a proper ER diagram and include as PNG.)*
+| Method | Endpoint | Description         |
+| ------ | -------- | ------------------- |
+| GET    | `/`      | Get all reviews     |
+| GET    | `/:id`   | Get review by ID    |
+| POST   | `/`      | Create a new review |
+| PUT    | `/:id`   | Update review by ID |
+| DELETE | `/:id`   | Delete review by ID |
 
 ---
 
 ## 📬 Postman Collection
 
-1. Open Postman → Import → Select `UserAPI.postman_collection.json`.
+1. Open Postman → Import → Select `API.postman_collection.json`.
 2. Set **BASE_URL** to `http://localhost:4000`.
 3. All endpoints are ready to test locally.
 4. Make sure to use `raw` → `JSON` for POST & PUT requests.
@@ -194,5 +152,6 @@ Server will start at `http://localhost:4000`.
 
 * Password hashing using bcrypt before saving user.
 * Roles can be used for access control (`admin` vs `customer`).
+* Authentication can be added for other modules as needed.
 
----
+
